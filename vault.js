@@ -1,25 +1,26 @@
 'use strict';
 module.exports = function () {
 
+  var secretValue = 0;
+
   var setValue = function (key, value) {
-    value = 'hunter2';
-    return value;
+    key = secretValue;
+    return getValue();
   };
+
 
   var getValue = function (key) {
-    if (key === null) {
+    if (!key) {
         return null;
     }
-
-    else if (key === 'secret password') {
+    else if (key === setValue) {
+      return setValue;
+    }
+    else {
       return setValue();
     }
-
-    else {
-      return null;
-    }
-
   };
+
 
   return {
     setValue: setValue,
