@@ -1,16 +1,21 @@
 'use strict';
 module.exports = function () {
 
-  function setValue(key, value) {
+  var setValue = function (key, value) {
 
-    return value;
-  }
+    // return value;
+  };
 
-  function getValue(key) {
+  var getValue = function (key) {
+    if (!key) {
+      return null;
+    }
+  };
 
-    return key;
-  }
-
+  return {
+    setValue: setValue,
+    getValue: getValue,
+  };
 
 };
 
